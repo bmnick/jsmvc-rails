@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Ember.js ToDos</title>
+    
+    <script type="text/javascript" charset="utf-8" src="scripts/jquery-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/ember-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/ember-rest.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/ember-app.js"></script>
+  </head>
+  <body>
+    <header><h1>Ember.js ToDo Application</h1></header>
+    <script type="text/x-handlebars" charset="utf-8">
+      {{#view id="create-todo"}}
+        {{view App.CreateTodoView id="new-todo" placeholder="What to do?"}}
+      {{/view}}
+      
+      {{#view id="todos"}}
+        {{#collection contentBinding="App.ToDoController" tagName="ul"}}
+          {{view Ember.Checkbox titleBinding="content.name" valueBinding="content.completed"}}
+        {{/collection}}
+      {{/view}}
+      
+      {{#view App.StatsView id="todo-information"}}
+        <p>{{remaining_count}} Tasks Remain<p>
+        {{#view Ember.Button target="App.ToDoController" action="mark_all_done" id="mark-complete"}}Mark All Tasks as Done{{/view}}
+        {{#if App.ToDoController.complete.length}}
+          {{#view Ember.Button target="App.ToDoController" action="clear_completed"id="clear-completed"}}Clear Completed{{/view}}
+        {{/if}}
+      {{/view}}
+    </script>
+  </body>
+</html>

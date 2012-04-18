@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Backbone.js ToDos</title>
+    
+    <script type="text/javascript" charset="utf-8" src="scripts/underscore-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/jquery-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/backbone-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/backbone-app.js"></script>
+  </head>
+  <body>
+    <header><h1>Backbone.js ToDo Application</h1></header>
+    
+    <div id="create-todo">
+      <input type-"text" placeholder="What to do?" id="new-todo" />
+    </div>
+    
+    <div id="todos">
+      <ul id="todo-list"></ul>
+    </div>
+    
+    <div id="todo-information"></div>
+    
+    <!-- Templates -->
+    <!-- Item Template -->
+    <script type="text/template" id="todo-template">
+      <input type="checkbox" class="completed-check" <%= completed ? 'checked="checked"' : '' %>>
+      <label class="name-label"><%= name %></label>
+    </script>
+    
+    <!-- Statistics/Info Template -->
+    <script type="text/template" id="stats-template">
+      <p><%= remaining_count %> Tasks Remain</p>
+      <button id="mark-all-done">Mark All Tasks as Done</button>
+      <% if (has_remaining) { %>
+        <button id="clear-completed">Clear Completed</button>
+      <% } %>
+    </script>
+  </body>
+</html>

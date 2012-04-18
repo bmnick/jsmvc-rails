@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Knockout.js ToDos</title>
+  </head>
+  <body>
+    <header><h1>Knockout.js ToDo Application</h1></header>
+    <div id="create-todo">
+      <input type="text" placeholder="What to do?" id="new-todo" data-bind="value: new_todo_name, valueUpdate: 'afterkeydown', executeOnEnter: add_todo">
+    </div>
+    
+    <div id="todos">
+      <ul data-bind="foreach: todos" id="todo-list">
+        <li>
+          <input type="checkbox" data-bind="checked: completed, attr: {id: string_id}" />
+          <label data-bind="text: name, attr: {for: string_id}"></label>
+        </li>
+      </ul>
+    </div>
+    
+    <div id="todo-information">
+      <p><span data-bind="text: remaining_todos"></span> Tasks Remain</p>
+      <button id="mark-complete" data-bind="click: mark_all_complete">Mark All Tasks as Done</button>
+      <button id="clear-completed" data-bind="click: clear_completed, visible: has_completed">Clear Completed</button>
+    </div>
+    
+    <script type="text/javascript" charset="utf-8" src="scripts/jquery-min.js"></script>    
+    <script type="text/javascript" charset="utf-8" src="scripts/knockout.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/knockout-app.js"></script>
+  </body>
+</html>
