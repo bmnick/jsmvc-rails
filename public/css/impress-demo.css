@@ -82,16 +82,10 @@ table {
     want to leave anybody behind.
 */
 body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     min-height: 740px;
     
-    background: rgb(215, 215, 215);
-    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
-    background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:    -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
-    background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));    
+    background-color: white;
 }
 
 /*
@@ -137,7 +131,7 @@ a:focus {
 */
 
 .fallback-message {
-    font-family: sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     line-height: 1.3;
     
     width: 780px;
@@ -175,7 +169,7 @@ a:focus {
     -o-box-sizing:      border-box;
     box-sizing:         border-box;
 
-    font-family: 'PT Serif', georgia, serif;
+    font-family: 'Yanone Kaffeesatz', 'Gill Sans', georgia, serif;
     font-size: 48px;
     line-height: 1.5;
 }
@@ -198,6 +192,11 @@ a:focus {
 
 .impress-enabled .step.active { opacity: 1 }
 
+.huge {
+    font-size: 5em;
+    line-height: 1em;
+}
+
 /*
     These 'slide' step styles were heavily inspired by HTML5 Slides:
     http://html5slides.googlecode.com/svn/trunk/styles.css
@@ -213,30 +212,122 @@ a:focus {
     height: 700px;
     padding: 40px 60px;
 
-    background-color: white;
     border: 1px solid rgba(0, 0, 0, .3);
-    border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
 
-    color: rgb(102, 102, 102);
     text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
 
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
     font-size: 30px;
     line-height: 36px;
     letter-spacing: -1px;
+    vertical-align: center;
+    
+    overflow-y: scroll;
+}
+
+.pink {
+    color: white;
+    background-color: rgb(234, 95, 134);
+}
+
+.pink a {
+    background: rgba(146, 57, 88, .5);
+}
+
+.pink a:hover,
+.pink a:focus {
+    background: rgba(146, 57, 88, 1);
+}	
+
+.green {
+    color: white;
+    background-color: rgb(146, 179, 88);
+}
+
+.green a {
+    background: rgba(107, 138, 50, 0.5)
+}
+
+.green a:hover,
+.green a:focus {
+    background: rgba(107, 132, 50, 1);    
+}
+
+.grey {
+    color: white;
+    background-color: rgb(54, 54, 54);
+}
+
+.blue {
+    color: white;
+    background-color: rgb(104, 168, 195);
+}
+
+.blue a {
+    background: rgba(59, 96, 115, .5);
+}
+
+.blue a:hover,
+.blue a:focus {
+    background: rgba(59, 96, 115, 1);
+}
+
+#controller-rotate {
+    border-bottom: none;
+    
+    -webkit-transition: all 0.5s;
+    -moz-transition:    all 0.5s;
+    -ms-transition:     all 0.5s;
+    -o-transition:      all 0.5s;
+    transition:         all 0.5s;
+}
+
+.slide h1 {
+    margin-top: 285px;
+    font-size: 3em;
+    text-align: center;
+}
+
+.slide h2 {
+    margin-top: 285px;
+    font-size: 5em;
+    text-align: center;
+}
+
+.slide .applink {
+    position: relative;
+    top: 285px;
+    left: 40px;
+    font-size: 4em;
+    text-align: center;
 }
 
 .slide q {
     display: block;
     font-size: 50px;
-    line-height: 72px;
 
-    margin-top: 100px;
+    margin-top: 120px;
+    font-size: 4em;
+    line-height: 1em;
+}
+
+.slide q.centered {
+    text-align: center;
+    margin-top: 240px;
 }
 
 .slide q strong {
     white-space: nowrap;
+}
+
+.slide ul {
+    font-size: 3em;
+    line-height: 1.5em;
+    list-style-type: square;
+    
+    margin-top: 100px;
+    margin-left: 50px;
 }
 
 /*
@@ -246,15 +337,15 @@ a:focus {
     scalable way of styling, but most of steps have quite a custom look
     and typography tricks here and there, so they had to be styles separately.
 
-    First is the title step with a big <h1> (no room for padding) and some
+    First is the breakout step with a big <h1> (no room for padding) and some
     3D positioning along Z axis.
 */
 
-#title {
+#breakout {
     padding: 0;
 }
 
-#title .try {
+#breakout .try {
     font-size: 64px;
     position: absolute;
     top: -0.5em;
@@ -267,7 +358,7 @@ a:focus {
     transform:         translateZ(20px);
 }
 
-#title h1 {
+#breakout h1 {
     font-size: 190px;
     
     -webkit-transform: translateZ(50px);
@@ -277,7 +368,7 @@ a:focus {
     transform:         translateZ(50px);
 }
 
-#title .footnote {
+#breakout .footnote {
     font-size: 32px;
 }
 
